@@ -14,6 +14,7 @@
 
 """Config flow for Eufy Robovac integration."""
 from __future__ import annotations
+import json
 
 import logging
 from typing import Any, Optional
@@ -157,6 +158,7 @@ def get_eufy_vacuums(self):
                         item["id"]
                     )
                 )
+                _LOGGER.debug(json.dumps(item["device"], indent=2))
 
     return response
 
